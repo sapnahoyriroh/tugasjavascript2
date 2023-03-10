@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 JS</title>
+</head>
+<body>
+    </body>
+    <script>
+        // Input data pegawai
+let nama = 'SAPNA HOYRIROH';
+let jabatan = 'manager';
+let status = 'single'; // atau "single" jika belum menikah
+
+// Konstanta gaji pokok berdasarkan jabatan
+let gajiPokok = {
+  manager: 10000000,
+  asistenmanager: 8000000,
+  staff: 5000000,
+};
+
+// Menghitung tunjangan jabatan
+let tunjanganJabatan = gajiPokok[jabatan] * 0.1;
+
+// Menghitung potongan BPJS
+let potonganBPJS = gajiPokok[jabatan] * 0.1;
+
+// Menghitung tunjangan keluarga
+let tunjanganKeluarga = status === 'menikah' ? gajiPokok[jabatan] * 0.1 : 0;
+
+// Menghitung total pendapatan
+let totalPendapatan = gajiPokok[jabatan] + tunjanganJabatan + tunjanganKeluarga+ potonganBPJS;
+
+// Cetak data pegawai dan pendapatan
+document.write(`Nama Pegawai: ${nama}`);
+document.write(`<br> Jabatan: ${jabatan}`);
+document.write(`<br> Nama status: ${status}`);
+document.write(`<br> Gaji Pokok: ${gajiPokok[jabatan]}`);
+document.write(`<br> Tunjangan Jabatan: ${tunjanganJabatan}`);
+document.write(`<br> Potongan BPJS: ${potonganBPJS}`);
+document.write(`<br> Tunjangan Keluarga: ${tunjanganKeluarga}`);
+document.write(`<br> Pendapatan Netto: ${totalPendapatan}`);
+
+</script>
+</html>
